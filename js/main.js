@@ -56,4 +56,25 @@ encabezado1.innerHTML = "<em>Ejercicio</em> DOM";
 btnMostrar.addEventListener("click", function (event){
     event.preventDefault();//no hagas lo que haces por defecto
     console.log("boton btnModificar presionado");
+
+    // Vamos a crear un elemento
+    let element = document.createElement("li");
+    element.innerText = "Another item"; // <li>Another item</li>
+    element.classList.add("list-group-item"); // Le agregamos la clase al elemento
+
+    let element2 = element.cloneNode(true); //Hacemos una copia del primer Node de la variable "element"
+    let element3 = element.cloneNode(true);
+    let element4 = element.cloneNode(true);
+
+    /*Si se hacen los 2, pero un cuerpo o un elemento no puede estar en 2 espacios al mismo tiempo por lo que se ejecutan los 2 al mismo tiempo, pero se queda con
+    el ultimo proceso.*/
+    listas.item(0).before(element); //Inserta el elemento antes de la lista
+    // listas.item(0).prepend(element);
+
+    listas.item(0).prepend(element2);//Inserta el elemento al inicio de la lista
+
+    listas.item(0).append(element3);//Inserta el elemento al final de la lista
+
+    listas.item(0).after(element4);//Inserta el elemento despues de la lista
+
 });
