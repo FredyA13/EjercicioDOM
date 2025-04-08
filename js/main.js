@@ -63,18 +63,41 @@ btnMostrar.addEventListener("click", function (event){
     element.classList.add("list-group-item"); // Le agregamos la clase al elemento
 
     let element2 = element.cloneNode(true); //Hacemos una copia del primer Node de la variable "element"
-    let element3 = element.cloneNode(true);
-    let element4 = element.cloneNode(true);
+    // let element3 = element.cloneNode(true);
+    // let element4 = element.cloneNode(true);
 
     /*Si se hacen los 2, pero un cuerpo o un elemento no puede estar en 2 espacios al mismo tiempo por lo que se ejecutan los 2 al mismo tiempo, pero se queda con
     el ultimo proceso.*/
-    listas.item(0).before(element); //Inserta el elemento antes de la lista
-    // listas.item(0).prepend(element);
+    // listas.item(0).before(element); //Inserta el elemento antes de la lista
+    //  listas.item(0).prepend(element);
 
-    listas.item(0).prepend(element2);//Inserta el elemento al inicio de la lista
+    // listas.item(0).prepend(element2);//Inserta el elemento al inicio de la lista
 
-    listas.item(0).append(element3);//Inserta el elemento al final de la lista
+    // listas.item(0).append(element3);//Inserta el elemento al final de la lista
 
-    listas.item(0).after(element4);//Inserta el elemento despues de la lista
+    // listas.item(0).after(element4);//Inserta el elemento despues de la lista
+
+    // listas.item(1).insertAdjacentElement("afterbegin", element); //Igual al prepend
+    // listas.item(1).insertAdjacentElement("beforeend", element2); //Igual al append
+
+    //Inserta el elemento antes de la lista
+    listas.item(1).insertAdjacentHTML("beforebegin",
+        `<li class="list-group-item">Before Begin item</li>`
+    );
+
+    //Inserta el elemento al inicio de la lista
+    listas.item(1).insertAdjacentHTML("afterend",
+        `<li class="list-group-item">After End item</li>`
+    );
+
+    //Inserta el elemento al final de la lista
+    listas.item(1).insertAdjacentHTML("afterbegin",
+        `<li class="list-group-item">After Begin item</li>`
+    );
+
+    //Inserta el elemento despues de la lista
+    listas.item(1).insertAdjacentHTML("beforeend",
+        `<li class="list-group-item">Before End item</li>`
+    );
 
 });
