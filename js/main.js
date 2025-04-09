@@ -13,6 +13,9 @@ let encabezado2 = document.getElementById("encabezado2");
 
 // The complete document is searched, including the root node.The returned HTMLCollection is live, meaning that it updates itself automatically to stay in sync with the DOM tree without having to call document.getElementsByTagName() again.
 let listas = document.getElementsByTagName("ul");
+let txtRFC = document.getElementById("txtRFC");
+let txtCURP = document.getElementById("txtCURP");
+let txtTelefono = document.getElementById("txtTelefono");
 
 let elementos = document.getElementsByClassName("list-group-item");
 
@@ -100,4 +103,38 @@ btnMostrar.addEventListener("click", function (event){
         `<li class="list-group-item">Before End item</li>`
     );
 
-});
+});//btnMostrar
+
+//Se ejecuta cuando termina de cargar todos los elementos de la pagina
+window.addEventListener("load", function(event){
+    event.preventDefault();
+    console.log("Se termino de cargar la pagina");
+    
+});//load
+
+//MANERA DE OPTIMIZAR TODO EL ANTERIOR PROCEDIMIENTO, USAR UNA FUNCION PARA TODOS LOS CASOS
+function txtToUpper(event){
+    event.target.value = event.target.value.trim().toUpperCase();
+}
+txtRFC.addEventListener("blur", txtToUpper);
+txtCURP.addEventListener("blur", txtToUpper);
+
+
+//blur -> cuando se sale del campo 
+//txtRFC.addEventListener("blur", function(event){
+    //event.preventDefault();
+    // txtRFC.value = txtRFC.value.toUpperCase();
+    //target hace referencia al RFC
+    //event.target.value = event.target.value.toUpperCase();
+//});//txtRFC
+
+//RECOMENDABLE USAR LA FUNCION "txtToUpper"
+//txtCURP.addEventListener("blur", function(event){
+    //event.preventDefault();
+    //txtCURP.value = txtCURP.value.toUpperCase();
+//});//txtCURP
+
+txtTelefono.addEventListener("blur", function(event){
+    event.preventDefault();
+    txtTelefono.value = txtTelefono.value.trim().slice(0,10);
+});//txtTelefono

@@ -10,18 +10,35 @@
 </head>
 
 <body>
-    <h1 id="encabezado1">DOM Ejercicio</h1>
-    <h2 id="encabezado2">DOM Ejercicio</h2>
-    <em>cursiva</em>
-
-    <hr>
-
-    <form>
-        <button type="" id="btnMostrar" class="btn btn-primary">Mostrar</button>
-    </form>
 
     <!-- https://developer.mozilla.org/en-US/curriculum/core/semantic-html/ -->
     <main class="container"> 
+
+        <h1 id="encabezado1">DOM Ejercicio</h1>
+        <h2 id="encabezado2">DOM Ejercicio</h2>
+        <em>cursiva</em>
+
+        <hr>
+
+        <form>
+            <div class="mb-3">
+                <label for="txtRFC" class="form-label">RFC:</label>
+                <input type="text" class="form-control" id="txtRFC" placeholder="Escribe tu RFC">
+            </div>
+
+            <div class="mb-3">
+                <label for="txtCURP" class="form-label">CURP:</label>
+                <input type="text" class="form-control" id="txtCURP" placeholder="Escribe tu CURP">
+            </div>
+
+            <div class="mb-3">
+                <label for="txtTelefono" class="form-label">Telefono:</label>
+                <input type="text" class="form-control" id="txtTelefono" placeholder="7854244">
+            </div>
+
+            <button type="" id="btnMostrar" class="btn btn-primary">Mostrar</button>
+        </form>
+        
         <ul class="list-group">
             <li class="list-group-item">An item</li>
             <li class="list-group-item">A second item</li>
